@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasMany(Toko::class);
     }
 
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
     protected static function boot()
     {
         parent::boot();

@@ -12,6 +12,7 @@ use App\Models\Regencies;
 use App\Models\Information;
 use Illuminate\Support\Str;
 use App\Models\Subscription;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -105,7 +106,7 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->errorValidationResponse($rules);
             }
-            return redirect()->back()->with('error', 'Gagal menambahkan data toko');
+            return redirect()->back()->with('error', 'Gagal menambahkan data Panic Button');
         } else {
             $toko = Toko::create([
                 'name' => $request->name,
@@ -137,7 +138,7 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->postSuccessResponse('Succesfully Create Store', $toko);
             }
-            return redirect('/dashboard/store/all')->with('success', 'Berhasil menambahkan data toko');
+            return redirect('/dashboard/store/all')->with('success', 'Berhasil menambahkan data Panic Button');
         }
     }
 
@@ -162,7 +163,7 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->errorValidationResponse($rules);
             }
-            return redirect()->back()->with('error', 'Gagal menambahkan data toko');
+            return redirect()->back()->with('error', 'Gagal menambahkan data Panic Button');
         } else {
             $user = $request->user();
             $user_id = $user->id;
@@ -183,12 +184,12 @@ class TokoController extends Controller
             ]);
             $subs = Subscription::where('id', $request->subsription_id)->first();
             Payment::create([
-                'code_bill' => 'INV' . $toko->id . date('YmdHis'),
+                'code_bill' => 'INV' . $toko->id .  Carbon::now('Asia/Jakarta')->format('YmdHis'),
                 'package_fee' =>  $subs->maintenance_price ,
                 'installation_fee' => $subs->price_installation,
                 'admin_fee' => 10000,
-                'transaction_time' => date('Y-m-d H:i:s'),
-                'payment_time' => date('Y-m-d H:i:s'),
+                'transaction_time' => Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'),
+                'payment_time' =>  Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s'),
                 'status' => 'pending',
                 'user_id' => $user_id,
                 'subscription_id' => $request->subsription_id,
@@ -196,7 +197,7 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->postSuccessResponse('Succesfully Create Store', $toko);
             }
-            return redirect('/dashboard/store/all')->with('success', 'Berhasil menambahkan data toko');
+            return redirect('/dashboard/store/all')->with('success', 'Berhasil menambahkan data Panic Button');
         }
     }
     /**
@@ -271,7 +272,7 @@ class TokoController extends Controller
                 if ($request->wantsJson()) {
                     return $this->notFoundResponse(['Toko not found']);
                 }
-                return redirect()->back()->with('error', 'Gagal mengupdate data toko');
+                return redirect()->back()->with('error', 'Gagal mengupdate data Panic Button');
             } else {
                 $toko->update([
                     'name' => $request->name,
@@ -291,7 +292,7 @@ class TokoController extends Controller
                 if ($request->wantsJson()) {
                     return $this->postSuccessResponse('Succesfully Update Store', $toko);
                 }
-                return redirect('/dashboard/store/all')->with('success', 'Berhasil mengupdate data toko');
+                return redirect('/dashboard/store/all')->with('success', 'Berhasil mengupdate data Panic Button');
             }
         }
     }
@@ -316,14 +317,14 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->errorValidationResponse($rules);
             }
-            return redirect()->back()->with('error', 'Gagal mengupdate data toko');
+            return redirect()->back()->with('error', 'Gagal mengupdate data Panic Button');
         } else {
             $toko = Toko::where('name', $id)->first();
             if (!$toko) {
                 if ($request->wantsJson()) {
                     return $this->notFoundResponse(['Toko not found']);
                 }
-                return redirect()->back()->with('error', 'Gagal mengupdate data toko');
+                return redirect()->back()->with('error', 'Gagal mengupdate data Panic Button');
             } else {
                 $user = $request->user();
                 $user_id = $user->id;
@@ -345,7 +346,7 @@ class TokoController extends Controller
                 if ($request->wantsJson()) {
                     return $this->postSuccessResponse('Succesfully Update Store', $toko);
                 }
-                return redirect('/dashboard/store/all')->with('success', 'Berhasil mengupdate data toko');
+                return redirect('/dashboard/store/all')->with('success', 'Berhasil mengupdate data Panic Button');
             }
         }
     }
@@ -361,13 +362,13 @@ class TokoController extends Controller
             if ($request->wantsJson()) {
                 return $this->postSuccessResponse('Succesfully Delete Store', $toko);
             } else {
-                return redirect()->back()->with('success', 'Berhasil menghapus data toko');
+                return redirect()->back()->with('success', 'Berhasil menghapus data Panic Button');
             }
         } else {
             if ($request->wantsJson()) {
                 return $this->notFoundResponse(['Toko not found']);
             } else {
-                return redirect()->back()->with('error', 'Gagal menghapus data toko');
+                return redirect()->back()->with('error', 'Gagal menghapus data Panic Button');
             }
         }
     }

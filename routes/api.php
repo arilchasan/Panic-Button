@@ -7,6 +7,7 @@ use App\Http\Controllers\TokoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +49,9 @@ Route::middleware('api.key')->group(function () {
         Route::post('/add-contact', [ContactController::class, 'store']);
         Route::post('/edit-contact/{name}', [ContactController::class, 'update']);
         Route::get('/delete-contact/{id}', [ContactController::class, 'destroy']);
+    });
+    Route::prefix('/tagihan')->group(function(){
+        Route::get('/all', [PaymentController::class, 'index']);
+        Route::get('/get', [PaymentController::class, 'getUserPayment'])->middleware('auth:sanctum');
     });
 });
