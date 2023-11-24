@@ -262,7 +262,7 @@
                                 <a class="nav-main-link{{ request()->is('dashboard/store/all') ? ' active' : '' }}"
                                     href="/dashboard/store/all">
                                     <i class="nav-main-link-icon fa-solid fa-store"></i>
-                                    <span class="nav-main-link-name">Toko</span>
+                                    <span class="nav-main-link-name">Panic Button</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">

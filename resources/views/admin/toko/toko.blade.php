@@ -53,10 +53,10 @@
 <div class="block block-rounded mx-5">
     <div class="block-header block-header-default">
         <h3 class="block-title">
-            Daftar Toko
+            Daftar Panic Button
         </h3>
         <div class="">
-            <a href="/dashboard/store/create" class="btn btn-success ml-2 leading-2 px-3">+ Toko</a>
+            <a href="/dashboard/store/create" class="btn btn-success ml-2 leading-2 px-3">+ Panic Button</a>
         </div>
     </div>
     <div class="block-content block-content-full">
@@ -87,7 +87,7 @@
         <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
             <thead>
                 <tr>
-                    <th class="d-none d-sm-table-cell">Nama Toko</th>
+                    <th class="d-none d-sm-table-cell">Nama Panic Button</th>
                     <th class="d-none d-sm-table-cell" style="width: 50%;">Alamat</th>
                     <th style="width: 30%;" class="text-center">Action</th>
                 </tr>
@@ -95,7 +95,7 @@
             <tbody>
                 @if ($toko->isEmpty())
                     <tr>
-                        <td colspan="4" class="text-center text-primary">Data Toko Kosong</td>
+                        <td colspan="4" class="text-center text-primary">Data Panic Button Kosong</td>
                     </tr>
                 @endif
                 @foreach ($toko as $t)

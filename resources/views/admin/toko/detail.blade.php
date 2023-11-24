@@ -18,12 +18,12 @@
         <form action="#">
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Nama Toko</label>
+                    <label for="brand" class="form-label">Nama Panic Button</label>
                     <input type="text" name="name" value="{{ $toko->name }}"
                         class="form-control" placeholder="Product brand" readonly>
                 </div>
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Nama Pemilik Toko</label>
+                    <label for="brand" class="form-label">Nama Pemilik Panic Button</label>
                     <input type="text" name="name" value="{{ $toko->user->name }}" id="brand"
                         class="form-control" readonly>
                 </div>
@@ -49,7 +49,7 @@
                         class="form-control" value="{{ $toko->key }}" readonly>
                 </div>
                 <div class="col-md-6">
-                    <label for="price" class="form-label">Status Aktif</label>
+                    <label for="price" class="form-label">Status Aktif Panic Button</label>
                     <input type="text" name="status_active"
                         class="form-control" value="{{ $toko->status_active }}" readonly>
                 </div>

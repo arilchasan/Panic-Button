@@ -19,17 +19,17 @@
     </style>
 
     <section class="p-5 mx-2 mt-3 shadow rounded">
-        <h2 class="mb-4 text-xl font-bold">Tambah Toko</h2>
+        <h2 class="mb-4 text-xl font-bold">Tambah Panic Button</h2>
         <form action="/dashboard/store/add-store" method="post">
             @csrf
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Nama Toko</label>
+                    <label for="brand" class="form-label">Nama Panic Button</label>
                     <input type="text" name="name" value="" id="brand" class="form-control"
                         placeholder="Masukkan Nama Toko" required autocomplete="off">
                 </div>
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Nama Pemilik Toko</label>
+                    <label for="brand" class="form-label">Nama Pemilik Panic Button</label>
                     <select id="user_id" name="user_id" class="form-select" required>
                         <option value="0">Pilih Pemilik Toko</option>
                         @foreach ($user as $u)
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Status Toko</label>
+                    <label for="brand" class="form-label">Status Panic Button</label>
                     <select name="status" class="form-select">
                         <option selected>Pilih Status</option>
                         <option value="online">Online</option>
@@ -65,9 +65,9 @@
                     placeholder="Masukkan Key" required>
                 </div> --}}
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Status Aktif Toko</label>
+                    <label for="brand" class="form-label">Status Aktif Panic Button</label>
                     <select name="status_active" class="form-select">
-                        <option selected>Pilih Statuf Aktif Toko</option>
+                        <option selected>Pilih Statuf Aktif Panic Button</option>
                         <option value="true">True</option>
                         <option value="false">False</option>
                     </select>

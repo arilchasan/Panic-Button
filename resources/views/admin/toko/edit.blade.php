@@ -24,12 +24,12 @@
             @csrf
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="form-label">Nama Toko</label>
+                    <label class="form-label">Nama Panic Button</label>
                     <input type="text" name="name" id="brand" value="{{ old('name', $toko->name) }}"
                         class="form-control" placeholder="Masukkan Nama Toko" required>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Pemilik Toko</label>
+                    <label class="form-label">Pemilik Panic Button</label>
                     <select name="user_id" class="form-select">
                         @foreach ($user as $index)
                             @if (old('user_id', $toko->user_id) == $index->id)
@@ -57,7 +57,7 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Status Toko</label>
+                    <label for="brand" class="form-label">Status Panic Button</label>
                     <select name="status" class="form-select">
 
                         <option value="online" @if (old('status', $toko->status) == 'online') selected @endif>Online</option>
@@ -71,7 +71,7 @@
                         class="form-control" placeholder="Masukkan Key" readonly>
                 </div>
                 <div class="col-md-6">
-                    <label for="brand" class="form-label">Status Aktif Toko</label>
+                    <label for="brand" class="form-label">Status Aktif Panic Button</label>
                     <select name="status_active" class="form-select">
                         <option value="true" @if (old('status_active', $toko->status_active) == 'true') selected @endif>True</option>
                         <option value="false" @if (old('status_active', $toko->status_active) == 'false') selected @endif>False</option>
